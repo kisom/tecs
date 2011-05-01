@@ -1,5 +1,5 @@
 load OR.hdl,
-output-file AND.out,
+output-file OR.out,
 output-list x%B3.1.3
             y%B3.1.3
             out%B3.1.3;
