@@ -7,6 +7,6 @@ set x 0,
 eval,
 output;
 
-set x 0,
+set x 1,
 eval,
 output;
