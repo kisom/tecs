@@ -1,0 +1,11 @@
+/**
+  * NAND-constructed OR gate
+ */
+
+CHIP AND {
+    IN x, y;
+    OUT out;
+
+    PARTS:
+}
+
