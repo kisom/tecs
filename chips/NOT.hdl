@@ -7,5 +7,6 @@ CHIP NOT {
     OUT out;
 
     PARTS:
+    NAND(x=x, y=x, out=out);
 }
 
