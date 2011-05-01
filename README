@@ -1,2 +1,7 @@
 these are my solutions to the exercises in the book "The Elements of
 Computing Systems" by Noam Nisan and Simon Schocken (ISBN 9780262640688).
+
+directories:
+    chips/
+        contains HDL descriptions of chips and their associated test scripts
+
