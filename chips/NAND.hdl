@@ -1,0 +1,15 @@
+/**
+  * NAND gate
+  * not AND
+ */
+
+CHIP NAND {
+    IN x, y;
+    OUT out;
+
+    PARTS:
+    And(a=x, b=y, out=andxy);
+    Not(in=andxy, out=out);
+}
+
+
