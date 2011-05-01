@@ -2,7 +2,7 @@
   * NAND-constructed OR gate
  */
 
-CHIP AND {
+CHIP OR {
     IN x, y;
     OUT out;
 
