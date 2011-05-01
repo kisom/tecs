@@ -1,0 +1,16 @@
+/**
+  * basic XOR chip constructed entirely of NAND gates
+ */
+
+CHIP XOR {
+    IN x, y;
+    OUT out;
+
+    PARTS:
+    NAND(x=x, y=x, out=notx);
+    NAND(x=y, y=y, out=noty);
+    NAND(x=x, y=noty, out=nand1);
+    NAND(x=y, y=notx, out=nand2);
+    NAND(x=nand1, y=nand2, out=out);
+}
+
