@@ -1,0 +1,11 @@
+/**
+  * NAND-constructed NOT gate
+ */
+
+CHIP NOT {
+    IN x;
+    OUT out;
+
+    PARTS:
+}
+
