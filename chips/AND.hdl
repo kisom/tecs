@@ -8,7 +8,6 @@ CHIP AND {
 
     PARTS:
     NAND(x=x, y=y, out=nand1);
-    NAND(x=x, y=y, out=nand2);
-    NAND(x=nand1, y=nand2, out=out);
+    NAND(x=nand1, y=nand1, out=out);
 }
 
