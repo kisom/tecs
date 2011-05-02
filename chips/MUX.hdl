@@ -1,13 +1,16 @@
 /**
   * multiplexor built from NAND-constructed primitives
-  * inputs: x and y are the data pins, z is the selector pin
-  * output: if z then x else y
+  * inputs: x and y are the data pins, sel is the selector pin
+  * output: if sel = 0 then x else y
  */
 
 CHIP MUX {
-    IN x, y, z;
+    IN x, y, sel;
     OUT out;
 
     PARTS:
+    AND(x=x, y=z, out=selx);
+    AND(x=y, y=z, out=sely);
+
 }
 
