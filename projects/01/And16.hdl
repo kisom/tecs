@@ -13,6 +13,7 @@ CHIP And16 {
     OUT out[16];
 
     PARTS:
-    // Implementation missing.
+    Nand16(a=a, b=b, out=stage1);
+    Nand16(a=stage1, b=stage1, out=out);
 }
 

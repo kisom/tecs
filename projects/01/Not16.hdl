@@ -13,5 +13,6 @@ CHIP Not16 {
     OUT out[16];
 
     PARTS:
-    // Implementation missing.
+    Nand16(a=in, b=in, out=out);
 }
+
