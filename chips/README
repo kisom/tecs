@@ -1,4 +1,5 @@
-customised chips
+customised chips - all chips built completely from NAND operations. these
+do not use already-built chips.
 
 naming convention: either the chip name or abbreviation in caps, ex.
     NAND, AND, OR. this is to separate it from the book's naming scheme.
