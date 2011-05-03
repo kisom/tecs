@@ -1,0 +1,7 @@
+customised chips
+
+naming convention: either the chip name or abbreviation in caps, ex.
+    NAND, AND, OR. this is to separate it from the book's naming scheme.
+
+test scripts: every chip needs to be verified via a test script.
+
