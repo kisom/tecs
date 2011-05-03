@@ -9,8 +9,9 @@ CHIP MUX {
     OUT out;
 
     PARTS:
-    AND(x=x, y=z, out=selx);
-    AND(x=y, y=z, out=sely);
+    NOT(x=sel, out=selx);   /* selx is active is x is selected */
+
+    
 
 }
 

@@ -1,5 +1,6 @@
 load NAND.hdl,
 output-file NAND.out,
+compare-to NAND.cmp,
 output-list x%B3.1.3
             y%B3.1.3
             out%B3.1.3;
