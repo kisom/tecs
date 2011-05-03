@@ -13,5 +13,7 @@ CHIP Or16 {
     OUT out[16];
 
     PARTS:
-    // Implementation missing.
+    Nand16(a=a, b=a, out=nanda);
+    Nand16(a=b, b=b, out=nandb);
+    Nand16(a=nanda, b=nandb, out=out);
 }
