@@ -1,0 +1,17 @@
+    PARTS:
+    NAND(x=sel, y=sel, out=selx);   /* selx is active if x is selected */
+    NAND(x=x, y=selx, out=andx);
+    NAND(x=y, y=sel, out=andystage1);
+    NAND(x=andystage1, y=andystage1, out=andy);
+    NAND(x=orx, y=ory, out=out);
+
+
+    PARTS:
+    NAND(x=sel, y=sel, out=selx);   /* selx is active if x is selected */
+    NAND(x=x, y=selx, out=andxstage1);
+    NAND(x=andxstage1, y=andxstage1, out=andx);
+    NAND(x=y, y=sel, out=andystage1);
+    NAND(x=andystage1, y=andystage1, out=andy);
+    NAND(x=andx, y=andx, out=orx);
+    NAND(x=andy, y=andy, out=ory);
+    NAND(x=orx, y=ory, out=out);
