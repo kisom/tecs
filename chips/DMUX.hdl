@@ -10,13 +10,13 @@
 CHIP DMUX {
 
     IN  in, sel;
-    OUT x, y;
+    OUT a, b;
 
     PARTS:
-    NAND(x=sel, y=sel, out=selx);
-    NAND(x=in, y=selx, out=andx);
-    NAND(x=andx, y=andx, out=x);
-    NAND(x=in, y=sel, out=andy);
-    NAND(x=andy, y=andy, out=y);
+    NAND(a=sel, b=sel, out=sela);
+    NAND(a=in, b=sela, out=anda);
+    NAND(a=anda, b=anda, out=a);
+    NAND(a=in, b=sel, out=andb);
+    NAND(a=andb, b=andb, out=b);
 }
 

@@ -6,7 +6,7 @@
 load DMUX.hdl,
 output-file DMUX.out,
 compare-to DMUX.cmp,
-output-list in%B3.1.3 sel%B3.1.3 x%B3.1.3 y%B3.1.3;
+output-list in%B3.1.3 sel%B3.1.3 a%B3.1.3 b%B3.1.3;
 
 set in 0,
 set sel 0,

@@ -5,12 +5,12 @@
  */
 
 CHIP MUX {
-    IN x, y, sel;
+    IN a, b, sel;
     OUT out;
 
     PARTS:
-    NAND(x=sel,  y=sel,  out=selx);   /* selx is active if x is selected */
-    NAND(x=x,    y=selx, out=andx);
-    NAND(x=y,    y=sel,  out=ory);
-    NAND(x=andx, y=andy, out=out);
+    NAND(a=sel,  b=sel,  out=sela);   /* selx is active if x is selected */
+    NAND(a=a,    b=sela, out=anda);
+    NAND(a=b,    b=sel,  out=orb);
+    NAND(a=anda, b=orb, out=out);
 }
