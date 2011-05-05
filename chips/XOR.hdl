@@ -3,14 +3,14 @@
  */
 
 CHIP XOR {
-    IN x, y;
+    IN a, b;
     OUT out;
 
     PARTS:
-    NAND(x=x, y=x, out=notx);
-    NAND(x=y, y=y, out=noty);
-    NAND(x=x, y=noty, out=nand1);
-    NAND(x=y, y=notx, out=nand2);
-    NAND(x=nand1, y=nand2, out=out);
+    NAND(a=a, b=b, out=nota);
+    NAND(a=b, b=b, out=notb);
+    NAND(a=a, b=notb, out=nand1);
+    NAND(a=b, b=nota, out=nand2);
+    NAND(a=nand1, b=nand2, out=out);
 }
 
