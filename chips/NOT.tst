@@ -1,12 +1,13 @@
 load NOT.hdl,
 output-file NOT.out,
-output-list x%B3.1.3
+compare-to NOT.cmp,
+output-list a%B3.1.3
             out%B3.1.3;
 
-set x 0,
+set a 0,
 eval,
 output;
 
-set x 1,
+set a 1,
 eval,
 output;
