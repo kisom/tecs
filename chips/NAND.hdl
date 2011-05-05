@@ -4,7 +4,7 @@
  */
 
 CHIP NAND {
-    IN x, y;
+    IN a, b;
     OUT out;
 
     BUILTIN Nand;

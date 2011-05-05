@@ -2,12 +2,12 @@
   * NAND-constructed AND gate
  */
 
-CHIP And {
-    IN x, y;
+CHIP AND {
+    IN a, b;
     OUT out;
 
     PARTS:
-    NAND(x=x, y=y, out=nand1);
-    NAND(x=nand1, y=nand1, out=out);
+    NAND(a=a, b=b, out=nand1);
+    NAND(a=nand1, b=nand1, out=out);
 }
 
