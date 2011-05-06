@@ -7,7 +7,7 @@ CHIP XOR {
     OUT out;
 
     PARTS:
-    NAND(a=a, b=b, out=nota);
+    NAND(a=a, b=a, out=nota);
     NAND(a=b, b=b, out=notb);
     NAND(a=a, b=notb, out=nand1);
     NAND(a=b, b=nota, out=nand2);
