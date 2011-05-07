@@ -9,9 +9,9 @@ CHIP OR8WAY {
     OUT out;
 
     PARTS:
-    NAND(a=in[0], b=in[0], out=not0);   // 1
-    NAND(a=in[1], b=in[1], out=not1);   // 1
-    NAND(a=not0,  b=not1,  out=or1);    // 0
+    NAND(a=in[0], b=in[0], out=not0);
+    NAND(a=in[1], b=in[1], out=not1);
+    NAND(a=not0,  b=not1,  out=or1);
 
     NAND(a=in[2], b=in[2], out=not2);   
     NAND(a=in[3], b=in[3], out=not3);
