@@ -1,0 +1,41 @@
+// NAND-only 8-way OR gate
+
+/**
+ * 8-way Or gate. out = in[0] or in[1] or ... or in[7]
+ */
+
+CHIP OR8WAY {
+    IN in[8];
+    OUT out;
+
+    PARTS:
+    NAND(a=in[0], b=in[0], out=not0);   // 1
+    NAND(a=in[1], b=in[1], out=not1);   // 1
+    NAND(a=not0,  b=not1,  out=or1);    // 0
+
+    NAND(a=in[2], b=in[2], out=not2);   
+    NAND(a=in[3], b=in[3], out=not3);
+    NAND(a=not2,  b=not3,  out=or2);
+
+    NAND(a=in[4], b=in[4], out=not4);
+    NAND(a=in[5], b=in[5], out=not5);
+    NAND(a=not4,  b=not5,  out=or3);
+
+    NAND(a=in[6], b=in[6], out=not6);
+    NAND(a=in[7], b=in[7], out=not7);
+    NAND(a=not6,  b=not7,  out=or4);
+
+    NAND(a=or1,   b=or1,   out=or5);
+    NAND(a=or2,   b=or2,   out=or6);
+    NAND(a=or5,   b=or6,   out=ora);
+
+    NAND(a=or3,   b=or3,   out=or7);
+    NAND(a=or4,   b=or4,   out=or8);
+    NAND(a=or7,   b=or8,   out=orb);
+
+    NAND(a=ora,   b=ora,   out=orc);
+    NAND(a=orb,   b=orb,   out=ord);
+    NAND(a=orc,   b=ord,   out=out);
+}
+
+
