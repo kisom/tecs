@@ -1,13 +1,9 @@
-/**
-  * NAND-constructed AND gate
- */
-
+/** Returns true if both inputs are true. */
 CHIP AND {
-    IN a, b;
-    OUT out;
+	IN a, b;
+	OUT out;
 
-    PARTS:
-    NAND(a=a, b=b, out=nand1);
-    NAND(a=nand1, b=nand1, out=out);
+	PARTS:
+	Nand(a=a, b=b, out=tmpand);
+	Nand(a=tmpand, b=tmpand, out=out);
 }
-

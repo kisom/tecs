@@ -1,16 +1,12 @@
-/**
-  * basic XOR chip constructed entirely of NAND gates
- */
-
+/** Returns true if the two inputs are not in the same state. */
 CHIP XOR {
-    IN a, b;
-    OUT out;
+	IN a, b;
+	OUT out;
 
-    PARTS:
-    NAND(a=a, b=a, out=nota);
-    NAND(a=b, b=b, out=notb);
-    NAND(a=a, b=notb, out=nand1);
-    NAND(a=b, b=nota, out=nand2);
-    NAND(a=nand1, b=nand2, out=out);
+	PARTS:
+	Nand(a=a, b=a, out=nota);
+	Nand(a=b, b=b, out=notb);
+	Nand(a=nota, b=b, out=outa);
+	Nand(a=a, b=notb, out=outb);
+	Nand(a=outa, b=outb, out=out);
 }
-

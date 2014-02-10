@@ -1,14 +1,10 @@
-/**
-  * NAND-constructed OR gate
- */
-
+/** Returns true iff at least one of its two inputs is true. */
 CHIP OR {
-    IN a, b;
-    OUT out;
+	IN a, b;
+	OUT out;
 
-    PARTS:
-    NAND(a=a, b=a, out=nanda);
-    NAND(a=b, b=b, out=nandb);
-    NAND(a=nanda, b=nandb, out=out);
+	PARTS:
+	Nand(a=a, b=a, out=nota);
+	Nand(a=b, b=b, out=notb);
+	Nand(a=nota, b=notb, out=out);
 }
-

@@ -1,12 +1,8 @@
-/**
-  * NAND-constructed NOT gate
- */
-
+/** Invert the input bit. */
 CHIP NOT {
-    IN a;
-    OUT out;
+	IN a;
+	OUT out;
 
-    PARTS:
-    NAND(a=a, b=a, out=out);
+	PARTS:
+	Nand(a=a, b=a, out=out);
 }
-

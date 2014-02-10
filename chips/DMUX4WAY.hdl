@@ -1,0 +1,32 @@
+CHIP DMUX4WAY {
+	IN in, sel[2];
+	OUT a, b, c, d;
+
+	PARTS:
+	Nand(a=sel[0], b=sel[0], out=notsel0);
+	Nand(a=sel[1], b=sel[1], out=notsel1);
+
+	// Row 1
+	Nand(a=notsel0, b=notsel1, out=r1g1);
+	Nand(a=sel[0], b=notsel1, out=r1g2);
+	Nand(a=sel[1], b=notsel0, out=r1g3);
+	Nand(a=sel[0], b=sel[1], out=r1g4);
+
+	// Row2
+	Nand(a=r1g1, b=r1g1, out=r2g1);
+	Nand(a=r1g2, b=r1g2, out=r2g2);
+	Nand(a=r1g3, b=r1g3, out=r2g3);
+	Nand(a=r1g4, b=r1g4, out=r2g4);
+
+	// Row3
+	Nand(a=in, b=r2g1, out=r3g1);
+	Nand(a=in, b=r2g2, out=r3g2);
+	Nand(a=in, b=r2g3, out=r3g3);
+	Nand(a=in, b=r2g4, out=r3g4);
+
+	// Row 4
+	Nand(a=r3g1, b=r3g1, out=a);
+	Nand(a=r3g2, b=r3g2, out=b);
+	Nand(a=r3g3, b=r3g3, out=c);
+	Nand(a=r3g4, b=r3g4, out=d);
+}
