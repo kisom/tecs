@@ -1,0 +1,55 @@
+CHIP DMUX8WAY {
+	IN in, sel[3];
+	OUT a, b, c, d, e, f, g, h;
+
+	PARTS:
+	Nand(a=sel[0], b=sel[0], out=notsel0);
+	Nand(a=sel[1], b=sel[1], out=notsel1);
+	Nand(a=sel[2], b=sel[2], out=notsel2);
+
+	Nand(a=in, b=notsel2, out=mux0a);
+	Nand(a=in, b=sel[2], out=mux1a);
+	Nand(a=mux0a, b=mux0a, out=mux0);
+	Nand(a=mux1a, b=mux1a, out=mux1);
+
+	Nand(a=notsel0, b=notsel1, out=r1g1a);
+	Nand(a=sel[0], b=notsel1, out=r1g2a);
+	Nand(a=sel[1], b=notsel0, out=r1g3a);
+	Nand(a=sel[0], b=sel[1], out=r1g4a);
+
+	Nand(a=r1g1a, b=r1g1a, out=r2g1a);
+	Nand(a=r1g2a, b=r1g2a, out=r2g2a);
+	Nand(a=r1g3a, b=r1g3a, out=r2g3a);
+	Nand(a=r1g4a, b=r1g4a, out=r2g4a);
+
+	Nand(a=mux0, b=r2g1a, out=r3g1a);
+	Nand(a=mux0, b=r2g2a, out=r3g2a);
+	Nand(a=mux0, b=r2g3a, out=r3g3a);
+	Nand(a=mux0, b=r2g4a, out=r3g4a);
+
+	Nand(a=r3g1a, b=r3g1a, out=a);
+	Nand(a=r3g2a, b=r3g2a, out=b);
+	Nand(a=r3g3a, b=r3g3a, out=c);
+	Nand(a=r3g4a, b=r3g4a, out=d);
+
+	Nand(a=notsel0, b=notsel1, out=r1g1b);
+	Nand(a=sel[0], b=notsel1, out=r1g2b);
+	Nand(a=sel[1], b=notsel0, out=r1g3b);
+	Nand(a=sel[0], b=sel[1], out=r1g4b);
+
+	Nand(a=r1g1b, b=r1g1b, out=r2g1b);
+	Nand(a=r1g2b, b=r1g2b, out=r2g2b);
+	Nand(a=r1g3b, b=r1g3b, out=r2g3b);
+	Nand(a=r1g4b, b=r1g4b, out=r2g4b);
+
+	Nand(a=mux1, b=r2g1b, out=r3g1b);
+	Nand(a=mux1, b=r2g2b, out=r3g2b);
+	Nand(a=mux1, b=r2g3b, out=r3g3b);
+	Nand(a=mux1, b=r2g4b, out=r3g4b);
+
+	Nand(a=r3g1b, b=r3g1b, out=e);
+	Nand(a=r3g2b, b=r3g2b, out=f);
+	Nand(a=r3g3b, b=r3g3b, out=g);
+	Nand(a=r3g4b, b=r3g4b, out=h);
+
+}
